@@ -644,6 +644,26 @@ body::before {
   line-height: 1.3;
 }
 
+.project-meta {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.project-meta a {
+  color: var(--amber);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.project-meta a:hover {
+  color: var(--cyan);
+}
+
 .project-tech {
   display: flex;
   flex-wrap: wrap;
@@ -686,6 +706,16 @@ body::before {
   color: var(--cyan);
   font-size: 0.75rem;
   top: 0.4rem;
+}
+
+.project-list a {
+  color: var(--amber);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.project-list a:hover {
+  color: var(--cyan);
 }
 
 .project-link {
@@ -783,6 +813,7 @@ body::before {
 .exp-place {
   color: var(--amber);
   font-weight: 500;
+  text-decoration: none;
 }
 
 .exp-period {
