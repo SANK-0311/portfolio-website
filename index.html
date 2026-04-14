@@ -1,553 +1,641 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="favicon.ico">
-    <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="apple-touch-icon" href="favicon.png">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SANTHOSH KUMAR</title>
+  <meta name="description" content="Aerospace Engineer | AI/ML Developer | IIT Bombay" />
 
-    <title>SANTHOSH KUMAR</title>
-    
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-    
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" />
-    
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-      <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="#home">
-        <img src="favicon.png" alt="Logo" class="navbar-logo">
+  <!-- Preconnect for speed -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="shortcut icon" href="favicon.ico" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Bootstrap Icons (lightweight icon usage) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ══════════════════ NAVBAR ══════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+
+     <!-- Gradient SVG Logo — accurate S-in-triangle recreation -->
+      <a class="nav-logo" href="#home" aria-label="Home">
+        <svg viewBox="0 0 200 215" xmlns="http://www.w3.org/2000/svg" fill="none">
+          <defs>
+            <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%"   stop-color="#00d4ff"/>
+              <stop offset="50%"  stop-color="#7c3aed"/>
+              <stop offset="100%" stop-color="#f59e0b"/>
+            </linearGradient>
+            <filter id="logo-glow" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur stdDeviation="2.5" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+ 
+          <!-- 1. Outer inverted triangle -->
+          <polygon
+            points="100,200 18,50 182,50"
+            stroke="url(#logo-grad)" stroke-width="7.5"
+            stroke-linejoin="miter"
+            filter="url(#logo-glow)"/>
+ 
+          <!-- 2. Inner horizontal bar at top (inner-triangle top edge) -->
+          <line x1="37" y1="68" x2="163" y2="68"
+                stroke="url(#logo-grad)" stroke-width="7"
+                filter="url(#logo-glow)"/>
+ 
+          <!-- 3. S-diagonal A: from inner-top-LEFT crossing right → to bottom center -->
+          <!-- This line crosses S-diagonal B at ~(100, 120) creating the S waist -->
+          <polyline
+            points="37,68 130,130 100,188"
+            stroke="url(#logo-grad)" stroke-width="7"
+            stroke-linejoin="miter"
+            filter="url(#logo-glow)"/>
+ 
+          <!-- 4. S-diagonal B: from inner-top-RIGHT crossing left → to bottom center -->
+          <polyline
+            points="163,68 70,130 100,188"
+            stroke="url(#logo-grad)" stroke-width="7"
+            stroke-linejoin="miter"
+            filter="url(#logo-glow)"/>
+        </svg>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ══════════════════ HERO ══════════════════ -->
+  <section id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <div class="hero-content">
+      <!-- Profile Image -->
+      <div class="hero-photo-wrap">
+        <div class="hero-photo-ring"></div>
+        <img src="images/santhosh_kumar.jpg" alt="Santhosh Kumar" class="hero-photo" />
+      </div>
+
+      <p class="hero-eyebrow">Aerospace · IIT Bombay</p>
+
+      <h1 class="hero-name">
+        <span class="line-1">SANTHOSH</span>
+        <span class="line-2">KUMAR</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        <span class="highlight">Aerospace Engineer</span> building the intersection of
+        Aerospace &amp; Intelligent Systems —
+        <span class="highlight">AI/ML developer</span>,
+        robotics enthusiast &amp; researcher.
+      </p>
+
+      <div class="hero-cta">
+        <a href="mailto:24m0010@iitb.ac.in" class="btn-grd">
+          <i class="bi bi-envelope-fill"></i> Email Me
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#home">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#about">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#projects">Projects</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#experience">Experience</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#skills">Skills</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#blog">Blog</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contact">Contact</a>
-            </li>
-          </ul>
-        </div>
+        <a href="https://www.linkedin.com/in/santhosh-kumar-5b44b1243" target="_blank" class="btn-outline">
+          <i class="bi bi-linkedin"></i> LinkedIn
+        </a>
+        <a href="https://github.com/SANK-0311" target="_blank" class="btn-outline">
+          <i class="bi bi-github"></i> GitHub
+        </a>
+        <a href="https://www.instagram.com/sank0311" target="_blank" class="btn-outline">
+          <i class="bi bi-instagram"></i> Instagram
+        </a>
       </div>
-    </nav>
+    </div>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-section">
-      <div class="container">
-        <div class="row align-items-center justify-content-center text-center">
-          <div class="col-lg-8">
-            <!-- images/santhosh_kumar.jpg -->
-            <img src="images/santhosh_kumar.jpg" alt="SANTHOSH KUMAR" class="profile-img mb-4" />
-            <h1 class="display-3 fw-bold mb-3">SANTHOSH KUMAR</h1>
-            <p class="lead mb-4">Aerospace Engineer | AI/ML/Software Developer | Robotics & Control (Learning) | IIT Bombay</p>
-            <div class="social-links">
-              <a href="mailto:24m0010@iitb.ac.in" class="btn btn-email btn-lg me-2 mb-2">
-                <i class="bi bi-envelope-fill"></i> Email
-              </a>
-              <a href="https://www.linkedin.com/in/santhosh-kumar-5b44b1243" target="_blank" class="btn btn-primary btn-lg me-2 mb-2">
-                <i class="bi bi-linkedin"></i> LinkedIn
-              </a>
-              <a href="https://github.com/SANK-0311" target="_blank" class="btn btn-dark btn-lg mb-2">
-                <i class="bi bi-github"></i> GitHub
-              </a>
-              <a href="https://www.instagram.com/sank0311?igsh=M25qMDM1dHdwbGUw&utm_source=qr" target="_blank" class="btn btn-instagram btn-lg mb-2">
-                <i class="bi bi-instagram"></i> Instagram
-              </a>
-            </div>
-          </div>
-        </div>
+    <div class="scroll-hint">
+      <div class="scroll-line"></div>
+      Scroll
+    </div>
+  </section>
+
+  <!-- ══════════════════ ABOUT ══════════════════ -->
+  <section id="about" class="section section-alt diagonal-top">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <span class="section-tag">Who I Am</span>
+        <h2 class="section-title">About Me</h2>
       </div>
-    </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-5">
-      <div class="container">
-        <h2 class="section-title text-center mb-5">About Me</h2>
-        <div class="row">
-          <div class="col-lg-8 mx-auto">
-            <p class="lead text-center mb-4">
-              I'm an Aerospace Engineering student at IIT Bombay.
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p>
+            I'm an <strong>Aerospace Engineering</strong> student at IIT Bombay, passionate about bridging the gap between classical aerospace engineering and cutting-edge AI/ML.
+          </p>
+          <p>
+            Alongside engineering, I actively engage in <strong>cryptocurrency trading</strong> and market research, with a focus on macroeconomic dynamics and global financial trends.
             </p>
-          </div>
+          <p>
+            I'm driven by curiosity and enjoy exploring emerging technologies,ideas, and interdisciplinary domains.
+            </p>
         </div>
 
-        <!-- Education -->
-        <div class="row mt-5">
-          <div class="col-lg-10 mx-auto">
-            <h3 class="text-center mb-4">Education</h3>
-            <div class="row">
-              <div class="col-md-6 mb-4">
-                <div class="card education-card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title">M.Tech in Aerospace Engineering</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Indian Institute of Technology Bombay</h6>
-                    <p class="card-text">
-                      <!-- <strong>Specialization:</strong> Aerodynamics<br /> -->
-                      <strong>Duration:</strong> 2024 - 2026<br />
-                      <strong>CPI:</strong> 9.04/10
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 mb-4">
-                <div class="card education-card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title">B.Tech in Aerospace Engineering</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Anna University (ACT, Chennai)</h6>
-                    <p class="card-text">
-                      <strong>Duration:</strong> 2020 - 2024<br />
-                      <strong>CGPA:</strong> 8.65/10
-                    </p>
-                  </div>
-                </div>
-              </div>
+        <div class="edu-cards reveal reveal-d2">
+          <div class="edu-card">
+            <div class="edu-card-title">M.Tech — Aerospace Engineering</div>
+            <div class="edu-card-school">Indian Institute of Technology Bombay</div>
+            <div class="edu-card-meta">
+              <span><i class="bi bi-calendar3"></i> 2024 – 2026</span>
+              <span class="gpa-badge">CPI 9.04 / 10</span>
+            </div>
+          </div>
+
+          <div class="edu-card">
+            <div class="edu-card-title">B.Tech — Aerospace Engineering</div>
+            <div class="edu-card-school">Anna University (ACT, Chennai)</div>
+            <div class="edu-card-meta">
+              <span><i class="bi bi-calendar3"></i> 2020 – 2024</span>
+              <span class="gpa-badge">CGPA 8.65 / 10</span>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-5 bg-light">
-      <div class="container">
-        <h2 class="section-title text-center mb-5">Key Projects</h2>
-        <div class="row">
-          <!-- Project 1 -->
-          <div class="col-lg-6 mb-4">
-            <div class="card project-card h-100">
-              <div class="card-body">
-                <h5 class="card-title">Aerospace Surface Defect Detection</h5>
-                <p class="text-muted small">(CNN-YOLOv8, PyTorch)</p>
-                <ul class="project-list">
-                  <li>Developed a CNN-based computer vision system to detect cracks, deformation, paint peel, and rivet damage.</li>
-                  <li>Trained the model using transfer learning, data augmentation & class balancing.</li>
-                  <li>Deployed a low-latency FastAPI inference backend with an image-upload web interface hosted on Render.</li>
-                </ul>
-                <a href="https://aerospace-surface-defect-detection.erwiq.com/" class="btn btn-primary mt-3" target="_blank">
-                  View Project <i class="bi bi-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 2 -->
-          <div class="col-lg-6 mb-4">
-            <div class="card project-card h-100">
-              <div class="card-body">
-                <h5 class="card-title">Sizing and Regional Deployment Analysis of Electric Commuter Aircraft for Indian Short-Haul Operations</h5>
-                <p class="text-muted small">M.Tech. Project, Guide: Prof. Avijit Chatterjee | IIT Bombay | Jun 2025 - Present</p>
-                <ul class="project-list">
-                  <li>Developed an algorithmic sizing framework for electric commuter aircraft to estimate weight, power, energy and performance from mission profiles and validated it against existing electric aircraft concepts.</li>
-                  <li>Built a FlightRadar24-based mission analysis to extract real climb, cruise & descent profiles for energy estimation.</li>
-                  <li>Analyzing payload–range trade-offs and identifing Indian routes suitable for early electric aircraft deployment.</li>
-                </ul>
-                <a href="#" class="btn btn-primary mt-3">
-                  View Project <i class="bi bi-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 3 -->
-          <div class="col-lg-6 mb-4">
-            <div class="card project-card h-100">
-              <div class="card-body">
-                <h5 class="card-title">Multimodal Airline Support Agent</h5>
-                <p class="text-muted small">OpenAI/Claude/Gemini API</p>
-                <ul class="project-list">
-                  <li>Built multimodal customer-service agent with text, image, and audio I/O</li>
-                  <li>Implemented function calling tools for PNR lookup and flight status</li>
-                  <li>Orchestrated multi-model routing with RAG over airline FAQs</li>
-                </ul>
-                <a href="#" class="btn btn-primary mt-3">
-                  View Project <i class="bi bi-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 4 -->
-          <div class="col-lg-6 mb-4">
-            <div class="card project-card h-100">
-              <div class="card-body">
-                <h5 class="card-title">AI Knowledge Worker (RAG System)</h5>
-                <p class="text-muted small">LangChain, FAISS/Chroma</p>
-                <ul class="project-list">
-                  <li>Engineered RAG system to ingest and query documents using vector databases</li>
-                  <li>Tuned retrieval performance with hybrid search and re-ranking</li>
-                  <li>Exposed REST API and Streamlit UI with source citations</li>
-                </ul>
-                <a href="#" class="btn btn-primary mt-3">
-                  View Project <i class="bi bi-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 5 -->
-          <div class="col-lg-6 mb-4">
-            <div class="card project-card h-100">
-              <div class="card-body">
-                <h5 class="card-title">E-commerce Platform</h5>
-                <p class="text-muted small">Django, AWS, PayPal</p>
-                <ul class="project-list">
-                  <li>Developed full-stack online store with user authentication</li>
-                  <li>Integrated PayPal payments and AWS services (S3, RDS, Elastic Beanstalk)</li>
-                  <li>Implemented responsive UI with email verification</li>
-                </ul>
-                <a href="#" class="btn btn-primary mt-3">
-                  View Project <i class="bi bi-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 6 -->
-          <div class="col-lg-6 mb-4">
-            <div class="card project-card h-100">
-              <div class="card-body">
-                <h5 class="card-title">Real-Time Chat Application</h5>
-                <p class="text-muted small">Django Channels, WebSockets</p>
-                <ul class="project-list">
-                  <li>Built multi-user real-time chat platform using WebSockets</li>
-                  <li>Designed scalable architecture with persistent message storage</li>
-                  <li>Developed responsive TailwindCSS UI with live updates</li>
-                </ul>
-                <a href="#" class="btn btn-primary mt-3">
-                  View Project <i class="bi bi-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 7 -->
-          <div class="col-lg-6 mb-4">
-            <div class="card project-card h-100">
-              <div class="card-body">
-                <h5 class="card-title">Nonlinear Modeling and PID Control of a Quadrotor UAV</h5>
-                <p class="text-muted small">MATLAB/Simulink</p>
-                <ul class="project-list">
-                  <li>Developed a nonlinear 6-DOF quadrotor dynamic model using Newton–Euler equations in MATLAB/Simulink.</li>
-                  <li>Designed a hierarchical PID attitude and position control architecture with rotor-level control allocation.</li>
-                  <li>Implemented 3D trajectory tracking and validated closed-loop performance UAV motion in simulation.</li>
-                </ul>
-                <a href="#" class="btn btn-primary mt-3">
-                  View Project <i class="bi bi-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 8 -->
-          <div class="col-lg-6 mb-4">
-            <div class="card project-card h-100">
-              <div class="card-body">
-                <h5 class="card-title">Flight Dynamics, Guidance, and Control of a Fixed-Wing UAV</h5>
-                <p class="text-muted small">Modelling, Simulation & Control</p>
-                <ul class="project-list">
-                  <li>Deriving the 6-DOF nonlinear and linearized flight-dynamics models of a fixed-wing UAV for longitudinal and lateral-directional motion.</li>
-                  <li>Designing a fixed-wing autopilot using trim conditions, linearization, and classical control methods.</li>
-                  <li>Developing waypoint-based guidance and trajectory following for autonomous fixed-wing navigation.</li>
-                </ul>
-                <a href="#" class="btn btn-primary mt-3">
-                  View Project <i class="bi bi-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-
-
-
-
-
-        </div>
+  <!-- ══════════════════ PROJECTS ══════════════════ -->
+  <section id="projects" class="section">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <span class="section-tag">What I've Built</span>
+        <h2 class="section-title">Key Projects</h2>
       </div>
-    </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="py-5">
-      <div class="container">
-        <h2 class="section-title text-center mb-5">Experience & Leadership</h2>
-        <div class="row">
-          <div class="col-lg-10 mx-auto">
-            <!-- Experience 1 -->
-             <div class="card experience-card mb-4">
-              <div class="card-body">
-                <h5 class="card-title">Research Intern - Electric Propulsion</h5>
-                <p class="text-muted">Sphere Tech Innovations, Chennai | Sep 2023 - Apr 2024</p>
-                <ul>
-                  <li>Designed & fabricated a low-power Applied-Field Magneto Plasma Dynamic Thruster (W cathode, Cu anode, permanent-magnet applied field); full 3D/assembly in CATIA and fabricated the design.</li>
-                  <li>Built an instrumented vacuum rig (rail-based load-cell thrust stand, Arduino control) and automated logging/plots in Python; peak thrust ≈ 0.30 N @ 40 V.</li>
-                  <li>Ran parameter sweeps (current, 50–120 mT field, mass flow, ACR = 1.5/1.75); standardized test plans; integrated ZVS + flyback HV supply; compiled reports/figures and co-authored the conference paper.</li>
-                </ul>
-              </div>
-            </div>
+      <div class="projects-grid">
 
-            <!-- Experience 2 -->
-            <div class="card experience-card mb-4">
-              <div class="card-body">
-                <h5 class="card-title">Teaching Assistant - AI and Data Science</h5>
-                <p class="text-muted">IIT Bombay | Prof. Prabhu Ramachandran | Jan'25 - May'25</p>
-                <ul>
-                  <li>Assisted in conducting exams & crib sessions for 100+ B.Tech students</li>
-                  <li>Evaluated assignments and written exams</li>
-                </ul>
-              </div>
-            </div>
+        <!-- P1 -->
+        <div class="project-card reveal">
+          <div class="project-num">01</div>
+          <div class="project-title">Aerospace Surface Defect Detection</div>
+          <div class="project-tech">
+            <span class="tech-tag">YOLOv8</span>
+            <span class="tech-tag">PyTorch</span>
+            <span class="tech-tag">FastAPI</span>
+            <span class="tech-tag">Transfer Learning</span>
+          </div>
+          <ul class="project-list">
+            <li>CNN-based vision system detecting cracks, deformation, paint peel & rivet damage.</li>
+            <li>Trained with transfer learning, data augmentation & class balancing.</li>
+            <li>Deployed low-latency FastAPI inference backend + image-upload web interface on Render.</li>
+          </ul>
+          <a href="https://aerospace-surface-defect-detection.erwiq.com/" target="_blank" class="project-link">
+            Live Demo <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
 
-            <!-- Experience 3 -->
-            <div class="card experience-card mb-4">
-              <div class="card-body">
-                <h5 class="card-title">Teaching Assistant - Aircraft Design</h5>
-                <p class="text-muted">IIT Bombay | Prof. Avijit Chatterjee  | Jan'26 - Present</p>
-                <ul>
-                  <li>Assisting in conducting Quiz’s, exams & crib sessions and evaluating Answer Scripts for 100+ students.</li>
-                </ul>
-              </div>
-            </div>
+        <!-- P2 -->
+        <div class="project-card reveal reveal-d1">
+          <div class="project-num">02</div>
+          <div class="project-title">Sizing & Regional Deployment Analysis of Electric Commuter Aircraft for Short-Haul Operations (M.Tech Project)</div>
+          <div class="project-tech">
+            <span class="tech-tag">Electric Aircraft</span>
+            <span class="tech-tag">FlightRadar24</span>
+            <span class="tech-tag">Python</span>
+          </div>
+          <ul class="project-list">
+            <li>Algorithmic sizing framework estimating weight, power, energy & performance from mission profiles.</li>
+            <li>FlightRadar24-based mission analysis for real climb/cruise/descent energy estimation.</li>
+            <li>Payload–range trade-off analysis identifying Indian routes for early electric deployment.</li>
+          </ul>
+          <a href="#" class="project-link">
+            In Progress <i class="bi bi-hourglass-split"></i>
+          </a>
+        </div>
 
-            <!-- Experience 4 -->
-            <div class="card experience-card mb-4">
-              <div class="card-body">
-                <h5 class="card-title">Teaching Assistant - Aerodynamics Laboratory</h5>
-                <p class="text-muted">IIT Bombay | Prof. Viren Menezes | Jul'25 - Nov’25</p>
-                <ul>
-                  <li>Guided 80+ B.Tech students during lab experiments on "Analysis of Unsteady Wave Motion in a Shock Tube"</li>
-                  <li>Clarified concepts and evaluated lab reports</li>
-                </ul>
-              </div>
-            </div>
+        <!-- P3 -->
+        <div class="project-card reveal reveal-d1">
+          <div class="project-num">03</div>
+          <div class="project-title">Guidance, Navigation, and Control of a Fixed-Wing Autonomous UAV</div>
+          <div class="project-tech">
+            <span class="tech-tag">6-DOF</span>
+            <span class="tech-tag">Linearization</span>
+            <span class="tech-tag">Autopilot</span>
+            <span class="tech-tag">Waypoint Nav</span>
+          </div>
+          <ul class="project-list">
+            <li>Developed a MATLAB/Simulink-based UAV simulation framework covering 6-DOF dynamics, estimation, guidance, and control</li>
+            <li>Implemented nonlinear flight dynamics with quaternion-based kinematics, including aerodynamic, propulsion, and disturbance models</li>
+            <li>Computed trim conditions and linearized models, and designed a multi-loop autopilot (PID) using successive loop closure</li>
+            <li>Integrated state estimation (Kalman filtering), path planning, and guidance algorithms for waypoint tracking and autonomous navigation</li>
+          </ul>
+          <a href="#" class="project-link">
+            View Project <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
 
-            <!-- Experience 5 -->
-            <div class="card experience-card mb-4">
-              <div class="card-body">
-                <h5 class="card-title">Interview Coordinator</h5>
-                <p class="text-muted">IIT Bombay - Placement Cell | Oct 2024 - Dec 2024</p>
-                <ul>
-                  <li>Coordinated with team of 250+ members for interviews of 2300+ students</li>
-                  <li>Assisted in conducting tests for 20+ firms and handling student queries</li>
-                </ul>
-              </div>
-            </div>
+        <!-- P4 -->
+        <div class="project-card reveal reveal-d2">
+          <div class="project-num">04</div>
+          <div class="project-title">Multimodal Airline Support Agent</div>
+          <div class="project-tech">
+            <span class="tech-tag">OpenAI API</span>
+            <span class="tech-tag">Claude API</span>
+            <span class="tech-tag">RAG</span>
+            <span class="tech-tag">Function Calling</span>
+          </div>
+          <ul class="project-list">
+            <li>Multimodal customer-service agent with text, image & audio I/O.</li>
+            <li>Function calling tools for PNR lookup and real-time flight status.</li>
+            <li>Multi-model routing orchestrated with RAG over airline FAQs.</li>
+          </ul>
+          <a href="#" class="project-link">
+            View Project <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
 
-            <!-- Experience 6 -->
-            <div class="card experience-card mb-4">
-              <div class="card-body">
-                <h5 class="card-title">Student Companion - ISCP</h5>
-                <p class="text-muted">IIT Bombay | Jul 2025 - Present</p>
-                <ul>
-                  <li>Selected as one among 330 mentors through competitive interview process</li>
-                  <li>Mentored 4 first-year PG students in academic, social, and extracurricular areas</li>
-                </ul>
-              </div>
+        <!-- P5 -->
+        <div class="project-card reveal reveal-d3">
+          <div class="project-num">05</div>
+          <div class="project-title">AI Knowledge Worker — RAG System</div>
+          <div class="project-tech">
+            <span class="tech-tag">LangChain</span>
+            <span class="tech-tag">FAISS</span>
+            <span class="tech-tag">Chroma</span>
+            <span class="tech-tag">Streamlit</span>
+          </div>
+          <ul class="project-list">
+            <li>RAG system ingesting & querying documents using vector databases.</li>
+            <li>Hybrid search + re-ranking for improved retrieval performance.</li>
+            <li>REST API + Streamlit UI with source citations.</li>
+          </ul>
+          <a href="#" class="project-link">
+            View Project <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- P6 -->
+        <div class="project-card reveal">
+          <div class="project-num">06</div>
+          <div class="project-title">Quadrotor UAV — Nonlinear Modeling & PID Control</div>
+          <div class="project-tech">
+            <span class="tech-tag">MATLAB</span>
+            <span class="tech-tag">Simulink</span>
+            <span class="tech-tag">6-DOF</span>
+            <span class="tech-tag">Newton-Euler</span>
+          </div>
+          <ul class="project-list">
+            <li>Nonlinear 6-DOF quadrotor dynamic model using Newton–Euler equations.</li>
+            <li>Hierarchical PID attitude & position control with rotor-level control allocation.</li>
+            <li>3D trajectory tracking validated in closed-loop simulation.</li>
+          </ul>
+          <a href="#" class="project-link">
+            View Project <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- P7 -->
+        <div class="project-card reveal reveal-d2">
+          <div class="project-num">07</div>
+          <div class="project-title">E-Commerce Platform</div>
+          <div class="project-tech">
+            <span class="tech-tag">Django</span>
+            <span class="tech-tag">AWS</span>
+            <span class="tech-tag">PayPal</span>
+            <span class="tech-tag">S3 / RDS</span>
+          </div>
+          <ul class="project-list">
+            <li>Full-stack online store with user authentication & roles.</li>
+            <li>PayPal payments + AWS (S3, RDS, Elastic Beanstalk) integration.</li>
+            <li>Responsive UI with email verification flow.</li>
+          </ul>
+          <a href="#" class="project-link">
+            View Project <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- P8 -->
+        <div class="project-card reveal reveal-d3">
+          <div class="project-num">08</div>
+          <div class="project-title">Real-Time Chat Application</div>
+          <div class="project-tech">
+            <span class="tech-tag">Django Channels</span>
+            <span class="tech-tag">WebSockets</span>
+            <span class="tech-tag">TailwindCSS</span>
+          </div>
+          <ul class="project-list">
+            <li>Multi-user real-time chat using WebSockets & Django Channels.</li>
+            <li>Scalable architecture with persistent message storage.</li>
+            <li>Responsive TailwindCSS UI with live updates.</li>
+          </ul>
+          <a href="#" class="project-link">
+            View Project <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════ EXPERIENCE ══════════════════ -->
+  <section id="experience" class="section section-alt diagonal-top">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <span class="section-tag">Track Record</span>
+        <h2 class="section-title">Experience &amp; Leadership</h2>
+      </div>
+
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="exp-card">
+            <div class="exp-title">Research Intern — Electric Propulsion</div>
+            <div class="exp-meta">
+              <span class="exp-place">Sphere Tech Innovations, Chennai</span>
+              <span class="exp-period">Sep 2023 – Apr 2024</span>
             </div>
+            <ul>
+              <li>Designed & fabricated a low-power Applied-Field MPD Thruster (W cathode, Cu anode, permanent-magnet applied field); full 3D/assembly in CATIA.</li>
+              <li>Built an instrumented vacuum rig (rail-based load-cell thrust stand, Arduino) + automated Python logging; peak thrust ≈ 0.30 N @ 40 V.</li>
+              <li>Ran parameter sweeps (current, 50–120 mT field, mass flow); integrated ZVS + flyback HV supply; co-authored conference paper.</li>
+            </ul>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="py-5 bg-light">
-      <div class="container">
-        <h2 class="section-title text-center mb-5">Technical Skills</h2>
-        <div class="row">
-          <div class="col-lg-10 mx-auto">
-            <div class="row">
-              <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card skill-card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title"><i class="bi bi-code-slash"></i> Programming</h5>
-                    <p class="card-text">Python, C++, SQL, Bash, LaTeX</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card skill-card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title"><i class="bi bi-robot"></i> Robotics & Control (Learning) </h5>
-                    <p class="card-text">ROS 2, Gazebo, PX4, RViz, Control Systems (PID, State-Space), MATLAB, Simulink</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card skill-card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title"><i class="bi bi-cpu"></i> ML Frameworks</h5>
-                    <p class="card-text">PyTorch, TensorFlow, scikit-learn, Keras</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card skill-card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title"><i class="bi bi-chat-dots"></i> GenAI & NLP</h5>
-                    <p class="card-text">LangChain, Transformers, Whisper, OpenAI API, Claude API, Gemini API, Llama</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card skill-card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title"><i class="bi bi-graph-up"></i> Data & Tools</h5>
-                    <p class="card-text">NumPy, Pandas, Matplotlib, Seaborn, Jupyter, Git, Linux, Docker</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card skill-card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title"><i class="bi bi-database"></i> Vector DBs & RAG</h5>
-                    <p class="card-text">FAISS, Chroma, Pinecone, Embedding models, Hybrid search</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card skill-card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title"><i class="bi bi-cloud"></i> Cloud/DevOps</h5>
-                    <p class="card-text">AWS (S3, RDS, SageMaker, Lambda), Render, CI/CD, MLflow</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card skill-card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title"><i class="bi bi-window"></i> Web & UI</h5>
-                    <p class="card-text">Django, FastAPI, Gradio, Streamlit, HTML/CSS/JavaScript, TailwindCSS</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card skill-card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title"><i class="bi bi-airplane"></i> CAD & Aerospace</h5>
-                    <p class="card-text">CATIA V5, XFLR5, SUAVE, Aircraft Sizing & Performance Analysis</p>
-                  </div>
-                </div>
-              </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="exp-card">
+            <div class="exp-title">Teaching Assistant — AI and Data Science</div>
+            <div class="exp-meta">
+              <span class="exp-place">IIT Bombay · Prof. Prabhu Ramachandran</span>
+              <span class="exp-period">Jan – May 2025</span>
             </div>
+            <ul>
+              <li>Assisted in exams & crib sessions for 100+ B.Tech students.</li>
+              <li>Evaluated assignments and written exams.</li>
+            </ul>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- Blog Section -->
-    <section id="blog" class="py-5">
-      <div class="container">
-        <h2 class="section-title text-center mb-5">Blog</h2>
-        <div class="row">
-          <div class="col-lg-4 mb-4">
-            <div class="card blog-card h-100">
-              <div class="card-body">
-                <h5 class="card-title">Getting Started with RAG Systems</h5>
-                <p class="text-muted small">December 1, 2025</p>
-                <p class="card-text">
-                  Exploring the fundamentals of Retrieval-Augmented Generation and how to build production-ready RAG systems...
-                </p>
-                <a href="#" class="btn btn-outline-primary">Read More <i class="bi bi-arrow-right"></i></a>
-              </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="exp-card">
+            <div class="exp-title">Teaching Assistant — Aircraft Design</div>
+            <div class="exp-meta">
+              <span class="exp-place">IIT Bombay · Prof. Avijit Chatterjee</span>
+              <span class="exp-period">Jan 2026 – Present</span>
             </div>
-          </div>
-
-          <div class="col-lg-4 mb-4">
-            <div class="card blog-card h-100">
-              <div class="card-body">
-                <h5 class="card-title">Electric Aircraft: The Future of Aviation</h5>
-                <p class="text-muted small">November 15, 2025</p>
-                <p class="card-text">
-                  A deep dive into hybrid electric propulsion systems and their impact on sustainable aviation...
-                </p>
-                <a href="#" class="btn btn-outline-primary">Read More <i class="bi bi-arrow-right"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 mb-4">
-            <div class="card blog-card h-100">
-              <div class="card-body">
-                <h5 class="card-title">Building Multimodal AI Agents</h5>
-                <p class="text-muted small">November 1, 2025</p>
-                <p class="card-text">
-                  Learn how to create AI agents that can process text, images, and audio using modern LLMs...
-                </p>
-                <a href="#" class="btn btn-outline-primary">Read More <i class="bi bi-arrow-right"></i></a>
-              </div>
-            </div>
+            <ul>
+              <li>Conducting quizzes, exams, crib sessions and evaluating answer scripts for 100+ students.</li>
+            </ul>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-5 bg-light">
-      <div class="container">
-        <h2 class="section-title text-center mb-5">Get In Touch</h2>
-        <div class="row">
-          <div class="col-lg-6 mx-auto text-center">
-            <p class="lead mb-4">Feel free to reach out for collaborations, opportunities, or just a chat!</p>
-            <div class="contact-info-section">
-              
-              <div class="social-links-footer mt-4">
-                <a href="https://www.linkedin.com/in/santhosh-kumar-5b44b1243" target="_blank" class="btn btn-primary btn-lg me-2 mb-2">
-                  <i class="bi bi-linkedin"></i>
-                </a>
-                <a href="https://github.com/SANK-0311" target="_blank" class="btn btn-dark btn-lg mb-2">
-                  <i class="bi bi-github"></i>
-                </a>
-                <a href="https://github.com/SANK-0311" target="_blank" class="btn btn-instagram btn-lg mb-2">
-                  <i class="bi bi-instagram"></i>
-                </a>
-              </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="exp-card">
+            <div class="exp-title">Teaching Assistant — Aerodynamics Laboratory</div>
+            <div class="exp-meta">
+              <span class="exp-place">IIT Bombay · Prof. Viren Menezes</span>
+              <span class="exp-period">Jul – Nov 2025</span>
             </div>
+            <ul>
+              <li>Guided 80+ B.Tech students in "Analysis of Unsteady Wave Motion in a Shock Tube" lab.</li>
+              <li>Clarified concepts and evaluated lab reports.</li>
+            </ul>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="py-4 text-center">
-      <div class="container">
-        <p class="mb-0">&copy; 2026 SANTHOSH KUMAR. All rights reserved.</p>
-      </div>
-    </footer>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="exp-card">
+            <div class="exp-title">Interview Coordinator</div>
+            <div class="exp-meta">
+              <span class="exp-place">IIT Bombay Placement Cell</span>
+              <span class="exp-period">Oct – Dec 2024</span>
+            </div>
+            <ul>
+              <li>Coordinated with 250+ member team for interviews of 2300+ students.</li>
+              <li>Assisted in conducting tests for 20+ firms and handling student queries.</li>
+            </ul>
+          </div>
+        </div>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- Custom JS -->
-    <script src="script.js"></script>
-  </body>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="exp-card">
+            <div class="exp-title">Student Companion — ISCP</div>
+            <div class="exp-meta">
+              <span class="exp-place">IIT Bombay</span>
+              <span class="exp-period">Jul 2025 – Present</span>
+            </div>
+            <ul>
+              <li>Selected from 330 mentors via competitive interview.</li>
+              <li>Mentored 4 first-year PG students academically, socially & extracurricularly.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════ SKILLS ══════════════════ -->
+  <section id="skills" class="section">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <span class="section-tag">Toolkit</span>
+        <h2 class="section-title">Technical Skills</h2>
+      </div>
+
+      <div class="skills-grid">
+
+        <div class="skill-card reveal">
+          <div class="skill-icon">⌨️</div>
+          <div class="skill-name">Programming</div>
+          <div class="skill-tags">
+            <span class="s-tag">Python</span><span class="s-tag">C++</span>
+            <span class="s-tag">SQL</span><span class="s-tag">Bash</span>
+            <span class="s-tag">LaTeX</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal reveal-d1">
+          <div class="skill-icon">🤖</div>
+          <div class="skill-name">Robotics & Control</div>
+          <div class="skill-tags">
+            <span class="s-tag">ROS 2</span><span class="s-tag">Gazebo</span>
+            <span class="s-tag">PX4</span><span class="s-tag">RViz</span>
+            <span class="s-tag">PID</span><span class="s-tag">State-Space</span>
+            <span class="s-tag">MATLAB</span><span class="s-tag">Simulink</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal reveal-d2">
+          <div class="skill-icon">🧠</div>
+          <div class="skill-name">ML Frameworks</div>
+          <div class="skill-tags">
+            <span class="s-tag">PyTorch</span><span class="s-tag">TensorFlow</span>
+            <span class="s-tag">scikit-learn</span><span class="s-tag">Keras</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal reveal-d3">
+          <div class="skill-icon">💬</div>
+          <div class="skill-name">GenAI & NLP</div>
+          <div class="skill-tags">
+            <span class="s-tag">LangChain</span><span class="s-tag">Transformers</span>
+            <span class="s-tag">Whisper</span><span class="s-tag">OpenAI API</span>
+            <span class="s-tag">Claude API</span><span class="s-tag">Gemini API</span>
+            <span class="s-tag">Llama</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-icon">📊</div>
+          <div class="skill-name">Data & Tools</div>
+          <div class="skill-tags">
+            <span class="s-tag">NumPy</span><span class="s-tag">Pandas</span>
+            <span class="s-tag">Matplotlib</span><span class="s-tag">Seaborn</span>
+            <span class="s-tag">Jupyter</span><span class="s-tag">Git</span>
+            <span class="s-tag">Linux</span><span class="s-tag">Docker</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal reveal-d1">
+          <div class="skill-icon">🗄️</div>
+          <div class="skill-name">Vector DBs & RAG</div>
+          <div class="skill-tags">
+            <span class="s-tag">FAISS</span><span class="s-tag">Chroma</span>
+            <span class="s-tag">Pinecone</span><span class="s-tag">Embeddings</span>
+            <span class="s-tag">Hybrid Search</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal reveal-d2">
+          <div class="skill-icon">☁️</div>
+          <div class="skill-name">Cloud / DevOps</div>
+          <div class="skill-tags">
+            <span class="s-tag">AWS S3</span><span class="s-tag">RDS</span>
+            <span class="s-tag">SageMaker</span><span class="s-tag">Lambda</span>
+            <span class="s-tag">Render</span><span class="s-tag">CI/CD</span>
+            <span class="s-tag">MLflow</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal reveal-d3">
+          <div class="skill-icon">🌐</div>
+          <div class="skill-name">Web & UI</div>
+          <div class="skill-tags">
+            <span class="s-tag">Django</span><span class="s-tag">FastAPI</span>
+            <span class="s-tag">Gradio</span><span class="s-tag">Streamlit</span>
+            <span class="s-tag">HTML/CSS/JS</span><span class="s-tag">TailwindCSS</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-icon">✈️</div>
+          <div class="skill-name">CAD & Aerospace</div>
+          <div class="skill-tags">
+            <span class="s-tag">CATIA V5</span><span class="s-tag">XFLR5</span>
+            <span class="s-tag">SUAVE</span><span class="s-tag">Aircraft Sizing</span>
+            <span class="s-tag">Performance Analysis</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════ BLOG ══════════════════ -->
+  <section id="blog" class="section section-alt diagonal-top">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <span class="section-tag">Thoughts</span>
+        <h2 class="section-title">Blog</h2>
+      </div>
+
+      <div class="blog-grid">
+        <div class="blog-card reveal">
+          <div class="blog-date">December 1, 2025</div>
+          <div class="blog-title">Getting Started with RAG Systems</div>
+          <div class="blog-excerpt">Exploring the fundamentals of Retrieval-Augmented Generation and how to build production-ready RAG systems with hybrid search and re-ranking...</div>
+          <a href="#" class="blog-link">Read More <i class="bi bi-arrow-right"></i></a>
+        </div>
+
+        <div class="blog-card reveal reveal-d1">
+          <div class="blog-date">November 15, 2025</div>
+          <div class="blog-title">Electric Aircraft: The Future of Aviation</div>
+          <div class="blog-excerpt">A deep dive into hybrid electric propulsion systems and their impact on sustainable aviation, backed by real sizing research...</div>
+          <a href="#" class="blog-link">Read More <i class="bi bi-arrow-right"></i></a>
+        </div>
+
+        <div class="blog-card reveal reveal-d2">
+          <div class="blog-date">November 1, 2025</div>
+          <div class="blog-title">Building Multimodal AI Agents</div>
+          <div class="blog-excerpt">Learn how to create AI agents that process text, images, and audio using modern LLMs and function calling frameworks...</div>
+          <a href="#" class="blog-link">Read More <i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════ CONTACT ══════════════════ -->
+  <section id="contact" class="section">
+    <div class="section-inner">
+      <div class="contact-inner reveal">
+        <span class="section-tag" style="justify-content:center;">Get In Touch</span>
+        <h2 class="contact-headline">
+          Let's <span class="grad-text">Connect</span>
+        </h2>
+        <p class="contact-sub">
+          Open to research collaborations, and conversations about aerospace, AI, or anything in between.
+        </p>
+        <div class="contact-links">
+          <a href="mailto:24m0010@iitb.ac.in" class="contact-btn email-btn">
+            <i class="bi bi-envelope-fill"></i> Email Me
+          </a>
+          <a href="https://www.linkedin.com/in/santhosh-kumar-5b44b1243" target="_blank" class="contact-btn li-btn">
+            <i class="bi bi-linkedin"></i> LinkedIn
+          </a>
+          <a href="https://github.com/SANK-0311" target="_blank" class="contact-btn gh-btn">
+            <i class="bi bi-github"></i> GitHub
+          </a>
+          <a href="https://www.instagram.com/sank0311" target="_blank" class="contact-btn ig-btn">
+            <i class="bi bi-instagram"></i> Instagram
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════ FOOTER ══════════════════ -->
+  <footer>
+    &copy; 2026 <span>SANTHOSH KUMAR</span> · All rights reserved.
+  </footer>
+
+  <!-- Scroll to top -->
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- Custom JS -->
+  <script src="script.js"></script>
+</body>
 </html>
